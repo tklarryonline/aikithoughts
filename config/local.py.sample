@@ -1,2 +1,8 @@
-SECRET_KEY = 'FIXME'
-DEBUG = False
+from config.common import Config
+
+
+class LocalConfig(Config):
+    SECRET_KEY = 'FIXME'
+    DEVELOPMENT = True
+    DEBUG = True
+    TESTING = True
