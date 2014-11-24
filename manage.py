@@ -2,7 +2,6 @@ from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.script import Manager
 
 from run import app, db
-from aikithoughts.models import *
 
 migrate = Migrate(app, db)
 manager = Manager(app)

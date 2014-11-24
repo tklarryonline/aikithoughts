@@ -3,6 +3,7 @@ import os
 from aikithoughts.blueprints.account import account_blueprint
 from aikithoughts.blueprints.main import main_blueprint
 from aikithoughts.runtime import app, csrf, db
+from aikithoughts import models
 
 
 def setup():
