@@ -11,6 +11,9 @@ class Config(object):
         {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'}
     ]
 
+    # Settings for SQLAlchemy
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+
 
 class ProductionConfig(Config):
     DEBUG = False
