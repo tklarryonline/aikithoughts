@@ -14,6 +14,11 @@ class Config(object):
     # Settings for SQLAlchemy
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
+    # Settings for Flask Security
+    SECURITY_URL_PREFIX = "/account"
+    SECURITY_PASSWORD_HASH = "bcrypt"
+    SECURITY_PASSWORD_SALT = os.environ.get('SECURITY_PASSWORD_SALT')
+
 
 class ProductionConfig(Config):
     DEBUG = False

@@ -6,3 +6,9 @@ class LocalConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
     TESTING = True
+
+    # Settings for SQLAlchemy
+    SQLALCHEMY_DATABASE_URI = "FIXME"
+
+    # Settings for Flask Security
+    SECURITY_PASSWORD_HASH = "plaintext"
