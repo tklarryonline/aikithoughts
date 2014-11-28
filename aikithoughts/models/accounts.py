@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255))
     active = db.Column(db.Boolean())
     created_at = db.Column(db.DateTime())
+    about_me = db.Column(db.Text)
 
     roles = db.relationship(
         'Role',
