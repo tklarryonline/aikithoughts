@@ -8,5 +8,7 @@ manager = Manager(app)
 
 manager.add_command('db', MigrateCommand)
 
+from aikithoughts.manager_commands import *
+
 if __name__ == '__main__':
     manager.run()
