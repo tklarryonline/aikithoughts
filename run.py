@@ -1,6 +1,6 @@
 from aikithoughts import setup
 
-app = setup.setup()
+app = setup.create_app()
 db = setup.db
 
 if __name__ == "__main__":

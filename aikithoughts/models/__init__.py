@@ -1,1 +1,1 @@
-from . import accounts, posts
+from . import accounts, authentications, posts

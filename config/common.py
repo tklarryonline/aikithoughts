@@ -15,9 +15,13 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
     # Settings for Flask Security
-    SECURITY_URL_PREFIX = "/account"
     SECURITY_PASSWORD_HASH = "bcrypt"
     SECURITY_PASSWORD_SALT = os.environ.get('SECURITY_PASSWORD_SALT')
+    SECURITY_REGISTERABLE = True
+    # LN we don't support sending email at the moment
+    SECURITY_SEND_REGISTER_EMAIL = False
+    SECURITY_SEND_PASSWORD_CHANGE_EMAIL = False
+    SECURITY_SEND_PASSWORD_RESET_NOTICE_EMAIL = False
 
 
 class ProductionConfig(Config):

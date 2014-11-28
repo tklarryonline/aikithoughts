@@ -1,5 +1,5 @@
 from flask.ext.security import UserMixin
-from aikithoughts.models.authentications import auth_assignments
+from aikithoughts.models.authentications import role_assignments
 
 from aikithoughts.runtime import db
 
@@ -15,8 +15,8 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime())
 
     roles = db.relationship('Role',
-                            secondary=auth_assignments,
+                            secondary=role_assignments,
                             backref=db.backref('users', lazy='dynamic'))
 
     def __repr__(self):
-        return '<User %r: %r>' % (self.id, self.nickname)
+        return '<User %r: %r (%s)>' % (self.id, self.nickname, self.email)
