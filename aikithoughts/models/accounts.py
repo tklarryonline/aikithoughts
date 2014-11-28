@@ -1,6 +1,7 @@
+from hashlib import md5
 from flask.ext.security import UserMixin
-from aikithoughts.models.authentications import role_assignments
 
+from aikithoughts.models.authentications import role_assignments
 from aikithoughts.runtime import db
 
 
@@ -26,3 +27,8 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return '<User %r: %r (%s)>' % (self.id, self.nickname, self.email)
+
+    def avatar(self, size=16):
+        return 'http://www.gravatar.com/avatar/%s?d=mm&s=%d' % (
+            md5(self.email.encode('utf-8')).hexdigest(), size
+        )
