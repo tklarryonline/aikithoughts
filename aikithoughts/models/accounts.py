@@ -14,9 +14,15 @@ class User(db.Model, UserMixin):
     active = db.Column(db.Boolean())
     created_at = db.Column(db.DateTime())
 
-    roles = db.relationship('Role',
-                            secondary=role_assignments,
-                            backref=db.backref('users', lazy='dynamic'))
+    roles = db.relationship(
+        'Role',
+        secondary=role_assignments,
+        backref=db.backref('users', lazy='dynamic')
+    )
+    posts = db.relationship(
+        'Post',
+        backref='author', lazy='dynamic'
+    )
 
     def __repr__(self):
         return '<User %r: %r (%s)>' % (self.id, self.nickname, self.email)
