@@ -1,0 +1,11 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+  <h1>User: {{ user.nickname }}</h1>
+  <hr/>
+  {% for post in user.posts %}
+    {{ post }}
+  {% endfor %}
+{% endblock %}
