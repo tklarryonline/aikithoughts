@@ -1,5 +1,6 @@
 import os
 from flask.ext.security.datastore import SQLAlchemyUserDatastore
+from flask.templating import render_template
 
 from aikithoughts.blueprints.account import account_blueprint
 from aikithoughts.blueprints.main import main_blueprint
@@ -22,6 +23,8 @@ def create_app():
     # Setups
     _setup_security(app)
 
+    _setup_errorhandlers(app)
+
     return app
 
 
@@ -34,3 +37,14 @@ def _setup_blueprints(app):
 def _setup_security(app):
     user_datastore = SQLAlchemyUserDatastore(db, models.accounts.User, models.authentications.Role)
     security.init_app(app, user_datastore)
+
+
+def _setup_errorhandlers(app):
+    @app.errorhandler(404)
+    def not_found_error(error):
+        return render_template('main/404.html'), 404
+
+    @app.errorhandler(500)
+    def internal_server_error(error):
+        db.session.rollback()
+        return render_template('main/500.html'), 500
