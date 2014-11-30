@@ -17,6 +17,7 @@ class Config(object):
     # Settings for Flask Security
     SECURITY_PASSWORD_HASH = "bcrypt"
     SECURITY_PASSWORD_SALT = os.environ.get('SECURITY_PASSWORD_SALT')
+    SECURITY_TRACKABLE = True
     SECURITY_REGISTERABLE = True
     # LN we don't support sending email at the moment
     SECURITY_SEND_REGISTER_EMAIL = False

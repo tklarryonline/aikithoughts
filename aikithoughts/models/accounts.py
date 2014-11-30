@@ -16,6 +16,13 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime())
     about_me = db.Column(db.Text)
 
+    '''Enables tracking'''
+    last_login_at = db.Column(db.DateTime())
+    current_login_at = db.Column(db.DateTime())
+    last_login_ip = db.Column(db.String)
+    current_login_ip = db.Column(db.String)
+    login_count = db.Column(db.Integer)
+
     roles = db.relationship(
         'Role',
         secondary=role_assignments,

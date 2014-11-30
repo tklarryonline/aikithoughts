@@ -13,6 +13,12 @@
       {% if user.about_me %}
         <p>{{ user.about_me }}</p>
       {% endif %}
+      {% if user.last_login_at %}
+        <p>
+          Last seen on:
+          <i>{{ user.last_login_at }}</i>
+        </p>
+      {% endif %}
     </td>
   </tr>
   </table>
