@@ -1,0 +1,13 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Edit Your Profile{% endblock %}
+
+{% block content %}
+  <h1>Edit Your Profile</h1>
+  <form action="" method="post">
+  {{ form.hidden_tag() }}
+  {{ form.nickname(placeholder="Your nickname", size=24) }}
+  {{ form.about_me(placeholder="About yourself", cols=32, rows=4) }}
+  {{ form.submit(value="Save") }}
+  </form>
+{% endblock %}
