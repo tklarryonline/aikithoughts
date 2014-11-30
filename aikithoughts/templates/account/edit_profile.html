@@ -5,9 +5,16 @@
 {% block content %}
   <h1>Edit Your Profile</h1>
   <form action="" method="post">
-  {{ form.hidden_tag() }}
-  {{ form.nickname(placeholder="Your nickname", size=24) }}
-  {{ form.about_me(placeholder="About yourself", cols=32, rows=4) }}
-  {{ form.submit(value="Save") }}
+    {% if form.errors %}
+      <ul>
+      {% for error in form.errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    {{ form.hidden_tag() }}
+    {{ form.nickname(placeholder="Your nickname", size=24) }}
+    {{ form.about_me(placeholder="About yourself", cols=32, rows=4) }}
+    {{ form.submit(value="Save") }}
   </form>
 {% endblock %}

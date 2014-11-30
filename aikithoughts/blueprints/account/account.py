@@ -24,7 +24,7 @@ def profile(id):
 @account_blueprint.route('/profile/edit', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
-    form = EditProfileForm(obj=current_user)
+    form = EditProfileForm(original_nickname=current_user.nickname, obj=current_user)
 
     if form.validate_on_submit():
         form.populate_obj(current_user)
