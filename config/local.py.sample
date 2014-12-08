@@ -12,3 +12,4 @@ class LocalConfig(Config):
 
     # Settings for Flask Security
     SECURITY_PASSWORD_HASH = "plaintext"
+    SECURITY_PASSWORD_SALT = "FIXME"
