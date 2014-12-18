@@ -1,2 +1,4 @@
 *.pyc
 local.py
+
+bower_components

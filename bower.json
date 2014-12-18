@@ -1,0 +1,22 @@
+{
+  "name": "aikithoughts",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tklarryonline/aikithoughts",
+  "authors": [
+    "Luan Nguyen Thanh <luan@tklarryonline.me>"
+  ],
+  "description": "My thoughts on Aiki",
+  "main": "run.py",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.0"
+  }
+}
