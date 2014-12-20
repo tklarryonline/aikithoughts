@@ -2,3 +2,6 @@
 local.py
 
 bower_components
+
+# Ignore generated css files
+static/css

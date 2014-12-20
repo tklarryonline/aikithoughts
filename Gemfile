@@ -5,3 +5,5 @@ source "https://rubygems.org"
 
 gem "sass"
 gem "compass"
+
+gem 'foreman', '0.76.0'
