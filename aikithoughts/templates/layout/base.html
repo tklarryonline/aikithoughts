@@ -5,7 +5,9 @@
     <title>{% block title %}{% endblock %} - Aikithoughts</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    {% assets "main_css" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+    {% endassets %}
   </head>
   <body>
   {% block flash_messages %}

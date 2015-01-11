@@ -1,10 +1,11 @@
 import os
 from flask.ext.security.datastore import SQLAlchemyUserDatastore
 from flask.templating import render_template
+from webassets.loaders import PythonLoader
 
 from aikithoughts.blueprints.account import account_blueprint
 from aikithoughts.blueprints.main import main_blueprint
-from aikithoughts.runtime import app, csrf, db, security
+from aikithoughts.runtime import app, csrf, db, security, assets
 from aikithoughts import models
 
 
@@ -24,6 +25,8 @@ def create_app():
     _setup_security(app)
 
     _setup_errorhandlers(app)
+
+    _setup_assets_bundler(app)
 
     return app
 
@@ -48,3 +51,12 @@ def _setup_errorhandlers(app):
     def internal_server_error(error):
         db.session.rollback()
         return render_template('main/500.html'), 500
+
+
+def _setup_assets_bundler(app):
+    assets.init_app(app)
+
+    # Loads and registers assets bundles
+    bundles = PythonLoader("assets_bundles").load_bundles()
+    for name, bundle in bundles.iteritems():
+        assets.register(name, bundle)
