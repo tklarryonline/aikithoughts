@@ -10,7 +10,7 @@ from aikithoughts import models
 
 def create_app():
     # Registers configurations
-    app.config.from_object(os.environ.get('APP_SETTINGS'))
+    app.config.from_object(os.environ.get('APP_SETTINGS', 'config.common.LocalConfig'))
 
     # Enables CSRF protection
     csrf.init_app(app)
