@@ -1,1 +1,95 @@
+@import "modules/colors";
 @import "partials/base";
+
+html {
+  font-size: 20px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  background: $bg-base;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+}
+
+.base-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: $grid-width-padding-sides;
+  padding-right: $grid-width-padding-sides;
+  position: relative;
+  width: $grid-width;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  color: $fg-base;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+header {
+
+  .logo {
+    background: url('/static/img/zen-circle.png') center 0 no-repeat;
+    height: 292px;
+    margin: 0 auto 3rem;
+    position: relative;
+    text-align: center;
+    width: 578px;
+
+    a.logo-text {
+      bottom: 35px;
+      color: $logo-fg;
+      display: block;
+      position: absolute;
+      text-decoration: none;
+      width: 100%;
+
+      &:visited,
+      &:active {
+        color: $logo-fg;
+      }
+
+      span,
+      strong {
+        display: block;
+        font-size: 1.75rem;
+        line-height: 1;
+      }
+    }
+  }
+
+  .about-links {
+    font-size: 0.8rem;
+    line-height: 1;
+
+    a {
+      font-weight: 400;
+    }
+
+    a > img {
+      vertical-align: bottom;
+    }
+
+    span.dot {
+      color: $fg-grey;
+      font-size: 1rem;
+      margin: 0 2px;
+    }
+  }
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

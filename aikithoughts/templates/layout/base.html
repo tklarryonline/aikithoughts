@@ -5,24 +5,38 @@
     <title>{% block title %}{% endblock %} - Aikithoughts</title>
 
     <!-- Stylesheets -->
-    {% assets "main_css" %}
-      <link rel="stylesheet" href="{{ ASSET_URL }}"/>
-    {% endassets %}
+    {% block css_libs %}
+      <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Open+Sans:600&subset=latin,vietnamese'
+            rel='stylesheet' type='text/css'>
+      {% assets "normalize_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+      {% endassets %}
+    {% endblock %}
+
+    {% block css %}
+      {% assets "main_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+      {% endassets %}
+    {% endblock %}
   </head>
   <body>
-  {% block flash_messages %}
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-  {% endblock %}
+    {% block flash_messages %}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    {% endblock %}
 
-  {% block content %}
-  {% endblock %}
+    {% include "layout/header.html" %}
+
+    <div class="base-container">
+      {% block content %}
+      {% endblock %}
+    </div>
   </body>
 </html>

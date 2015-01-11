@@ -24,6 +24,8 @@ class Config(object):
     SECURITY_SEND_PASSWORD_CHANGE_EMAIL = False
     SECURITY_SEND_PASSWORD_RESET_NOTICE_EMAIL = False
 
+    SITE_CONTACT = "luan@tklarryonline.me"
+
 
 class ProductionConfig(Config):
     DEBUG = False
