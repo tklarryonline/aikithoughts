@@ -5,3 +5,4 @@ bower_components
 
 # Ignore generated css files
 aikithoughts/static/css
+aikithoughts/static/.webassets-cache
