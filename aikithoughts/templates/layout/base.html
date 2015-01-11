@@ -3,6 +3,11 @@
   <head lang="en">
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %} - Aikithoughts</title>
+
+    <!-- Stylesheets -->
+    {% assets "main_css" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+    {% endassets %}
   </head>
   <body>
   {% block flash_messages %}
