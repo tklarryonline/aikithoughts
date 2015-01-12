@@ -19,6 +19,7 @@
       {% endassets %}
     {% endblock %}
   </head>
+
   <body>
     {% block flash_messages %}
       {% with messages = get_flashed_messages() %}
@@ -38,5 +39,8 @@
       {% block content %}
       {% endblock %}
     </div>
+
+    {% include "layout/footer.html" %}
   </body>
+
 </html>
