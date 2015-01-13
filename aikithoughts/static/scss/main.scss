@@ -36,7 +36,12 @@ a {
   }
 }
 
-header {
+p {
+  font-size: 0.9rem;
+}
+
+header.base-container {
+  margin-bottom: 3.5rem;
 
   .logo {
     background: url('/static/img/zen-circle.png') center 0 no-repeat;
@@ -105,4 +110,54 @@ footer {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.post {
+
+  h1.post-title {
+    @extend .text-center;
+
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .post-time {
+    @extend .text-center;
+
+    color: $fg-grey;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.75rem;
+  }
+
+  .post-content {
+    @include grid-centered(8);
+
+    p {
+      text-indent: 1.5rem;
+    }
+  }
+
+  & + hr.circle-divider {
+    @include grid-centered(6);
+  }
+}
+
+hr.circle-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  color: #333;
+  margin: 2.5rem auto;
+  padding: 0 0.5rem;
+  text-align: center;
+
+  &:after {
+    background: $bg-base;
+    color: #666;
+    content: '○';
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+    position: relative;
+    top: -0.75em;
+  }
 }

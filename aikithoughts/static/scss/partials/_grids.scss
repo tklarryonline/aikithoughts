@@ -2,3 +2,12 @@ $grid-gutter: 1rem;
 $grid-column-width: 3rem;
 $grid-width: 48rem;
 $grid-width-padding-sides: 0.5rem;
+
+@mixin grid-centered($columns-number) {
+  $columns-width: $columns-number * $grid-column-width;
+  $gutters-width: ($columns-number - 1) * $grid-gutter;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: $columns-width + $gutters-width;
+}

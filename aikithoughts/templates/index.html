@@ -1,4 +1,24 @@
 {% extends "layout/base.html" %}
 
 {% block content %}
+  <div class="posts-list">
+
+    <div class="post">
+      <h1 class="post-title">Sự hòa hợp giữa Uke và Tori</h1>
+      <div class="post-time">{{ now().strftime("%d/%m/%Y - %I:%M %p") }}</div>
+      <div class="post-content">
+        <p>
+          <i>Uke</i> (nghĩa là “người nhận” — người chịu đòn) và <i>Tori</i> (người thi triển đòn)
+          có mối quan hệ vô cùng đặc biệt. Không như những môn võ khác nơi võ sinh thường
+          tập luyện với <i>đối thủ</i>, thì các môn sinh Aikido tập luyện với
+          <i>một cộng sự — một người bạn đồng hành, người bạn tập</i>.
+          Aikido không có khái niệm cạnh tranh, hay ý niệm đối kháng giữa một người đối với người khác.
+          Thay vì thế, mỗi người bạn tập chính là một nửa của một
+          khối thống nhất, và có trách nhiệm như nhau
+          trong việc tập luyện Aikido.
+        </p>
+      </div>
+    </div>
+    <hr class="circle-divider"/>
+  </div>
 {% endblock %}
