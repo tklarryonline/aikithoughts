@@ -28,6 +28,19 @@ def create_app():
 
     _setup_assets_bundler(app)
 
+    # Setup context processor
+    @app.context_processor
+    def custom_context():
+        context = dict()
+
+        # Put imports here to make sure it only imports when called
+        import datetime
+        context.update(
+            now=datetime.datetime.now
+        )
+
+        return context
+
     return app
 
 
